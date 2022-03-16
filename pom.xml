@@ -59,9 +59,6 @@
                         <configuration>
                             <rules>
                                 <rule>
-                                    <includes>
-                                        <include>ProductManager</include>
-                                    </includes>
                                     <limits>
                                         <limit>
                                             <counter>BRANCH</counter>

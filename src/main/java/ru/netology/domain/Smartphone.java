@@ -19,4 +19,12 @@ public class Smartphone extends Product {
     public void setVendor(String vendor) {
         this.vendor = vendor;
     }
+
+    @Override
+    public boolean matches(String search) {
+        if (super.matches(search)) {
+            return true;
+        }
+        return (getVendor().contains(search));
+    }
 }
