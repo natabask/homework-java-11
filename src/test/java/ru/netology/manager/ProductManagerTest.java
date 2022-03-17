@@ -16,6 +16,7 @@ class ProductManagerTest {
     private Product second = new Smartphone(2, "3110", 870, "Nokia");
     private Product third = new Book(3, "Eugene Onegin", 400, "Alexander Pushkin");
     private Product fourth = new Smartphone(4, "Honor", 2000, "HTC");
+    private Product fifth = new Book(5, "Three Musketeers", 370, "Alexander Duma");
 
     @BeforeEach
     public void shouldSetUpInitialState() {
@@ -23,6 +24,7 @@ class ProductManagerTest {
         manager.add(second);
         manager.add(third);
         manager.add(fourth);
+        manager.add(fifth);
     }
 
     @Test
@@ -57,6 +59,24 @@ class ProductManagerTest {
     public void shouldSearchSmartphoneByVendor() {
         Product[] actual = manager.searchBy("HTC");
         Product[] expected = {fourth};
+
+        assertArrayEquals(actual, expected);
+    }
+
+    @Test
+    //Несколько товаров подходят под один поисковый запрос
+    public void shouldSearchWhenSomeMatch() {
+        Product[] actual = manager.searchBy("Alexander");
+        Product[] expected = {third, fifth};
+
+        assertArrayEquals(actual, expected);
+    }
+
+    @Test
+    //Ни один из товаров не подходит под поисковый запрос
+    public void shouldSearchWhenNothingMatches() {
+        Product[] actual = manager.searchBy("iphone");
+        Product[] expected = {};
 
         assertArrayEquals(actual, expected);
     }
