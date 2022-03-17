@@ -9,29 +9,21 @@ class BookTest {
 
     @Test
     public void shouldReturnTrueIfNameContains() {
-        boolean actual = book.matches("Capital");
-        boolean expected = true;
-        assertEquals(expected, actual);
+        assertTrue(book.matches("Capital"));
     }
 
     @Test
     public void shouldReturnFalseIfNameDoesntContains() {
-        boolean actual = book.matches("Capitan");
-        boolean expected = false;
-        assertEquals(expected, actual);
+        assertFalse(book.matches("Capitan"));
     }
 
     @Test
     public void shouldReturnTrueIfAuthorContains() {
-        boolean actual = book.matches("Marx");
-        boolean expected = true;
-        assertEquals(expected, actual);
+        assertTrue(book.matches("Marx"));
     }
 
     @Test
     public void shouldReturnFalseIfAuthorDoesntContains() {
-        boolean actual = book.matches("Pushkin");
-        boolean expected = false;
-        assertEquals(expected, actual);
+        assertFalse(book.matches("Pushkin"));
     }
 }

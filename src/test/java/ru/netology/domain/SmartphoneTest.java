@@ -9,29 +9,21 @@ class SmartphoneTest {
 
     @Test
     public void shouldReturnTrueIfNameContains() {
-        boolean actual = smartphone.matches("Honor");
-        boolean expected = true;
-        assertEquals(expected, actual);
+        assertTrue(smartphone.matches("Honor"));
     }
 
     @Test
     public void shouldReturnFalseIfDoesntContains() {
-        boolean actual = smartphone.matches("iphone");
-        boolean expected = false;
-        assertEquals(expected, actual);
+        assertFalse(smartphone.matches("iphone"));
     }
 
     @Test
     public void shouldReturnTrueIfVendorContains() {
-        boolean actual = smartphone.matches("HTC");
-        boolean expected = true;
-        assertEquals(expected, actual);
+        assertTrue(smartphone.matches("HTC"));
     }
 
     @Test
     public void shouldReturnFalseIfVendorDoesntContains() {
-        boolean actual = smartphone.matches("apple");
-        boolean expected = false;
-        assertEquals(expected, actual);
+        assertFalse(smartphone.matches("apple"));
     }
 }

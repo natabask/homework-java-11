@@ -9,15 +9,11 @@ class ProductTest {
 
     @Test
     public void shouldReturnTrueIfNameContains() {
-        boolean actual = product.matches("white");
-        boolean expected = true;
-        assertEquals(expected, actual);
+        assertTrue(product.matches("white"));
     }
 
     @Test
     public void shouldReturnFalseIfNameDoesntContains() {
-        boolean actual = product.matches("black");
-        boolean expected = false;
-        assertEquals(expected, actual);
+        assertFalse(product.matches("black"));
     }
 }
